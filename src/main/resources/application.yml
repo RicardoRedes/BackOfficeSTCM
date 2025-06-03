@@ -1,0 +1,89 @@
+server:
+  port: 9093
+
+spring:
+  application:
+    name: customer-wallet-service
+
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://192.168.24.53:1433;database=master
+    username: administrator
+    password: STCm3tr0rr3y
+    hikari:
+        maximum-pool-size: 20
+        minimum-idle: 10
+        idle-timeout: 300000
+        connection-timeout: 30000
+        max-lifetime: 1800000
+
+  jpa:
+    database: SQL_SERVER
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+
+        
+constants:
+  api:
+    uri:
+      basePath: /api/v1/
+      specificPaths:
+      
+      
+        afc-equipment-get-by: afcEquipment/get/by
+        afc-equipment-register: afcEquipment/add
+        afc-equipment-register-list: afcEquipment/add/list
+        
+        bus-unit: busUnit
+        bus-unit-get-all: busUnit/get/all
+        bus-unit-get-all-detail: busUnit/get/all/details
+        bus-unit-insert: busUnit/add
+        
+        transport-routes-get-all: transportRoutes/get/all
+        transport-routes-get-all-simple: transportRoutes/get/all/simple
+        transport-routes-get-all-detail: transportRoutes/get/all/details
+        transport-routes-get-all-by: transportRoutes/get/all/by
+        
+        devices-get-all: devices/get/all
+        devices-insert: devices/add
+        
+        company-contract-get-all-simple: companyContract/get/all/simple
+        company-transport-get-all-simple: companyTransport/get/all/simple
+        
+        transport-station: transportStation
+        transport-line: transportLine
+        transport-unit: transportUnit
+        
+        title-type: titleType
+        title-type-cat: titleTypeByCat
+        title-category: titleCategory
+        
+        retrieve-collection: collection
+        insert-collection: collection/add
+        
+        preassessed-orders: initialization/order
+        
+        retrieve-event-hist: getEventHist
+        insert-event-hist: addEventHist
+        update-event-hist: putEventHist
+        
+        retrieve-inventory-cards: getInventoryCards
+        
+        retrieve-stations: getStations
+        
+        retrieve-users: getUsers
+        
+        retrieve-gray-list: retrieve-gray-list
+        retrieve-black-list: retrieve-black-list
+        retrieve-black-list-xml: black-list/download
+        
+        insert-transaction-qr: add-transaction-qr    
+        
+        insert-access: coa/add  
+        
+        insert-access2: coa/add2 
+        
+        retrieve-generate-key: external/generateKey
+        oxxo-store-insert: oxxo/store/add
